@@ -41,7 +41,15 @@ void setup() {
   Serial.println("Wifi Conectado!!!");
   Serial.println(WiFi.localIP());
   
-  
+  mqttClient.setServer(mqtt_broker, mqtt_port);
+  while(!mqttClient.connected()){
+    if(mqttClient.connect(client_id.c_str())){
+      Serial.println("Conectado ao Broker!");
+    }else{
+      Serial.print(".");
+      delay(2000);
+    }
+  }
 }
 
 void loop() {
