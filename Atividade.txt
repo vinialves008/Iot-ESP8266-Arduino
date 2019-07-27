@@ -1,17 +1,12 @@
-a) Qual a diferença entre uma comunicação serial síncrona de uma comunicação serial assíncrona?
+a) Conexão síncrona utiliza-se de um sinal clock para a comunicação enquanto a assícrona é definida por parâmetros que garantem o envio de dados sem erros.
 
-Conexão síncrona utiliza-se de um sinal clock para a comunicação enquanto a assícrona é definida por parâmetros que garantem o envio de dados sem erros.
-
-b) As formas de comunicação podem ser full-duplex, half-duplex e simplex. Quais as características de cada um? Descreva com suas palavras.
-
+b) 
 Full-duplex -> Dispositivos podem transmitir e receber dados simultâneamente.
 Half-duplex -> Dispositivos pode transmitir e receber dados, porém cada um a seu tempo.
 simplex -> Dispositivos com transmissão e recepção unidirecional, ou seja, um dispositivo irá somente transmitir dados enquanto o outro irá somente receber.
 
-c) Dentre os protocolos de comunicação comumente utilizados, temos 1-Wire, I2C, UART e SPI. 
-Descreva brevemente com suas palavras cada um e detalhe se é full-duplex, half-duplex ou simplex, e se é síncrono ou assíncrono.
-
-1-Wire -> 
-I2C -> 
+c) 
+1-Wire -> O funcionamento deste protocolo se dá em três partes, primeiro há a habilitação da comunicação e identificação dos escravos conectados, depois a seleção de qual escravo deverá receber os comandos e só ao final ocorre a transmissão de dados. A transmissão é half duplex e assíncrona.
+I2C -> Protocolo de transmissão síncrona, bidirecional e de baixa velocidade, os dispositivos podem ser adicionados ou removidos ao barramento sem afetar os demais dispositivos. Cada um dos dispositvos conectados possuem um endereço. Transmissão Half duplex.
 UART -> O pino de transmissão (TX) envia pacotes que serão interpretados bit a bit pelo receptor (RX). Para indicar o início e o final do pacote de mensagens é enviado junto ao pacote um start bit e um ou 2 stop bits. Transmissão Full duplex.
-SPI -> Possui transmissão síncrona e não possui limite de escravos. Transmissão Full-duplex.
+SPI -> Possui transmissão síncrona, gerada pelo mestre (processador) e não possui limite de escravos. Transmissão Full-duplex.
